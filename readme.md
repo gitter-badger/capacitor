@@ -8,3 +8,9 @@ A basic Flux/React bootstrap. Also a work in progress.
 npm install -d
 npm start
 ```
+
+## Run tests
+
+```bash
+npm test
+```

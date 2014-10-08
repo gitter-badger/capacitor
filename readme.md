@@ -8,6 +8,7 @@ Also a work in progress.
 ## What this includes:
 
 - [Webpack](http://webpack.github.io/docs/) with [hot module replacement](https://github.com/webpack/docs/wiki/hot-module-replacement-with-webpack) using [react-hot-loader](https://github.com/gaearon/react-hot-loader)
+- [ES6 Javascript](http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts) using [React's](http://facebook.github.io/react/) [jstransform](https://www.npmjs.org/package/jstransform)
 - **Dispatcher** powered by [flux](https://github.com/facebook/flux)
 - **Stores** powered by [immutable-js](**https://github.com/facebook/immutable-js)
 - **Testing** with [jest](https://github.com/facebook/jest)

@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node lib/serve",
-    "test": "jest"
+    "test": "jest",
+    "test:accessibility": "pa11y http://localhost:3000"
   },
   "keywords": [
     "flux",

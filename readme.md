@@ -11,7 +11,7 @@ Also a work in progress.
 - [ES6 Javascript](http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts) using [React's](http://facebook.github.io/react/) [jstransform](https://www.npmjs.org/package/jstransform)
 - **Dispatcher** powered by [flux](https://github.com/facebook/flux)
 - **Stores** powered by [immutable-js](**https://github.com/facebook/immutable-js)
-- **Testing** with [jest](https://github.com/facebook/jest)
+- **Unit Testing** with [jest](https://github.com/facebook/jest)
 - **Routing** with [react-router](https://github.com/rackt/react-router)
 
 ## Setup

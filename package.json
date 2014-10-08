@@ -4,6 +4,7 @@
   "description": "A Flux boilerplate app.",
   "main": "src/index.js",
   "scripts": {
+    "start": "node lib/serve",
     "test": "jest"
   },
   "keywords": [
@@ -24,6 +25,8 @@
   },
   "dependencies": {
     "colors": "^1.0.2",
+    "envify": "^1.2.1",
+    "envify-loader": "^0.1.0",
     "flux": "^2.0.1",
     "immutable": "^2.1.0",
     "json-loader": "^0.5.1",

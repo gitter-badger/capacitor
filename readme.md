@@ -1,5 +1,7 @@
 # Capacitor
 
+[![Build Status](https://travis-ci.org/vigetlabs/capacitor.png?branch=master)](https://travis-ci.org/vigetlabs/capacitor)
+
 A basic Flux/React bootstrap. Heavily inspired by [Artsy's Ezel Project](https://github.com/artsy/ezel).
 Also a work in progress.
 

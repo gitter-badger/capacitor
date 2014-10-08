@@ -15,6 +15,10 @@
   ],
   "author": "Nate Hunzaker",
   "license": "MIT",
+  "repository": {
+    "type" : "git",
+    "url"  : "git://github.com/vigetlabs/washi.git"
+  },
   "jest": {
     "globals": {
       "__DEV__": true

@@ -43,3 +43,10 @@ All environment variables should go in `.env`. This file is loaded in on boot, b
 `NODE_ENV=production PORT=4000 npm start`
 
 Would start the server in production mode on port `4000`, instead of `3000`.
+
+## Deployment
+
+A `postinstall` script has been added to the `package.json` for this
+project. Heroku should automatically run this script to build
+assets. For other hosting environments simply run `npm run
+postinstall` after other deployment activities have been performed.

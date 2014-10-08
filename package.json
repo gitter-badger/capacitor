@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node lib/serve",
     "test": "jest",
-    "test:accessibility": "pa11y http://localhost:3000"
+    "test:accessibility": "pa11y http://localhost:3000",
+    "postinstall": "./lib/production.sh"
   },
   "keywords": [
     "flux",

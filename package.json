@@ -16,8 +16,8 @@
   "author": "Nate Hunzaker",
   "license": "MIT",
   "repository": {
-    "type" : "git",
-    "url"  : "git://github.com/vigetlabs/washi.git"
+    "type": "git",
+    "url": "git://github.com/vigetlabs/washi.git"
   },
   "jest": {
     "globals": {
@@ -47,8 +47,10 @@
   "devDependencies": {
     "chai": "^1.9.2",
     "jest-cli": "^0.1.18",
+    "node-notifier": "^4.0.2",
     "pa11y": "^1.6.2",
     "react-hot-loader": "^0.4.5",
+    "react-router": "^0.9.3",
     "react-tools": "^0.11.2"
   }
 }

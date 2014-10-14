@@ -13,6 +13,7 @@ Also a work in progress.
 - **Stores** powered by [immutable-js](**https://github.com/facebook/immutable-js)
 - **Unit Testing** with [jest](https://github.com/facebook/jest)
 - **Routing** with [react-router](https://github.com/rackt/react-router)
+- **Isomorphic Rendering** with [Express](http://expressjs.com/) rendered through [Swig](http://paularmstrong.github.io/swig/)
 
 ## Setup
 

@@ -10,5 +10,5 @@ module.exports = function(app) {
   app.engine('html', swig.renderFile)
 
   app.set('view engine', 'html')
-  app.set('views', path.join(__ROOT__, 'views'))
+  app.set('views', path.join(__ROOT__, 'public'))
 }

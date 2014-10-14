@@ -9,6 +9,6 @@
  * See http://facebook.github.io/flux/docs/dispatcher.html
  */
 
-var Dispatcher = require('flux').Dispatcher;
+var Dispatcher = require('flux').Dispatcher
 
-module.exports = new Dispatcher();
+module.exports = new Dispatcher()

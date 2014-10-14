@@ -1,5 +1,5 @@
 var Router = require('react-router')
-var routes = require('../../src/router')
+var routes = require('../../shared/router')
 
 module.exports = function(app) {
 

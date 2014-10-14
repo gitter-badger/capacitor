@@ -1,5 +1,5 @@
 /** @jsx React.DOM **/
-var React = require('react');
+var React = require('react')
 
 var Layout = React.createClass({
 
@@ -8,9 +8,9 @@ var Layout = React.createClass({
       <main role="main">
         <this.props.activeRouteHandler />
       </main>
-    );
+    )
   }
 
-});
+})
 
-module.exports = Layout;
+module.exports = Layout

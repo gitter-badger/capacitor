@@ -5,7 +5,7 @@
  */
 
 var React  = require('react')
-var Router = require('./router')
+var Router = require('../shared/router')
 
 /**
  * Expose React in development mode for the React
@@ -15,7 +15,7 @@ var Router = require('./router')
  * TODO: I wonder if it's possible to just do this inside of WebPack
  */
 if (__DEV__) {
-  window.React = React;
+  window.React = React
 }
 
 React.renderComponent(Router, document.querySelector('#app'))

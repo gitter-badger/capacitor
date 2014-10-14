@@ -1,16 +1,16 @@
-require('node-env-file')('./.env');
+require('node-env-file')('./.env')
 
-var WebPack = require('webpack');
-var isDevelopment = process.env.NODE_ENV === 'development';
+var WebPack = require('webpack')
+var isDevelopment = process.env.NODE_ENV === 'development'
 
 module.exports = {
   cache: true,
   debug: isDevelopment,
   devtool: isDevelopment ? 'sourcemap' : null,
-  entry: './src/index.js',
+  entry: './client/index.js',
 
   output: {
-    path: __dirname,
+    path: __dirname + '/../public',
     publicPath: '/',
     filename: 'public/capacitor.js',
     sourceMapFilename: 'public/capacitor.map'
@@ -51,4 +51,4 @@ module.exports = {
       }
     ]
   }
-};
+}

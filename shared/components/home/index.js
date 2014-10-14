@@ -1,8 +1,8 @@
 /** @jsx React.DOM **/
-var React = require('react');
-var Monitor = require('../../mixins/monitor');
-var Counter = require('../../stores/counter');
-var CounterActions = require('../../actions/counter');
+var React = require('react')
+var Monitor = require('../../mixins/monitor')
+var Counter = require('../../stores/counter')
+var CounterActions = require('../../actions/counter')
 
 var Home = React.createClass({
 
@@ -24,13 +24,13 @@ var Home = React.createClass({
         <p>Clicks: { this.state.count }</p>
         <button onClick={ this._onCounterClick }>Click me!</button>
       </section>
-    );
+    )
   },
 
   _onCounterClick() {
-    CounterActions.incr();
+    CounterActions.incr()
   }
 
-});
+})
 
-module.exports = Home;
+module.exports = Home

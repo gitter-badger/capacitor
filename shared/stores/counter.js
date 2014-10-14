@@ -3,12 +3,12 @@
  * and allows for the increasing of a counter value.
  */
 
-var Bus        = require('../bus');
-var Dispatcher = require('../dispatcher');
-var Actions    = require('../constants/actions');
-var Immutable  = require('immutable');
+var Bus        = require('../bus')
+var Dispatcher = require('../dispatcher')
+var Actions    = require('../constants/actions')
+var Immutable  = require('immutable')
 
-var _data = Immutable.Map({ count : 0 });
+var _data = Immutable.Map({ count : 0 })
 
 var Counter = {
 
@@ -17,7 +17,7 @@ var Counter = {
    * Otherwise it returns the entire object as JS.
    */
   get(key) {
-    return typeof key === 'string' ? _data.get(key) : _data.toJS();
+    return typeof key === 'string' ? _data.get(key) : _data.toJS()
   },
 
   /**
@@ -27,27 +27,27 @@ var Counter = {
    * Triggers Bus.publish()
    */
   set(prop, value) {
-    _data = typeof prop === 'object' ? _data.merge(prop) : _data.set(prop, value);
-    Bus.publish();
+    _data = typeof prop === 'object' ? _data.merge(prop) : _data.set(prop, value)
+    Bus.publish()
   },
 
   /**
    * Increase the count attribute by one.
    */
   incr() {
-    Counter.set('count', Counter.get('count') + 1);
+    Counter.set('count', Counter.get('count') + 1)
   }
 
-};
+}
 
-module.exports = Counter;
+module.exports = Counter
 
 Dispatcher.register(function(action) {
   switch (action.type) {
     case Actions.COUNTER_INCR:
-      Counter.incr();
-      break;
+      Counter.incr()
+      break
     default:
       // do nothing
   }
-});
+})

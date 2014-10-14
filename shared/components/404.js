@@ -1,5 +1,5 @@
 /** @jsx React.DOM **/
-var React = require('react');
+var React = require('react')
 
 var Error404 = React.createClass({
 
@@ -11,9 +11,9 @@ var Error404 = React.createClass({
         </header>
         <p>You've hit a page that can not be found!</p>
       </section>
-    );
+    )
   }
 
-});
+})
 
-module.exports = Error404;
+module.exports = Error404

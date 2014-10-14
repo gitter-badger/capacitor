@@ -4,8 +4,8 @@
  * and Stores separate.
  */
 
-var Actions    = require('../constants/actions');
-var Dispatcher = require('../dispatcher');
+var Actions    = require('../constants/actions')
+var Dispatcher = require('../dispatcher')
 
 module.exports = {
 
@@ -13,4 +13,4 @@ module.exports = {
     Dispatcher.dispatch({ type: Actions.COUNTER_INCR })
   }
 
-};
+}

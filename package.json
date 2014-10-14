@@ -1,10 +1,11 @@
 {
-  "name": "capacitor",
+  "name": "Capacitor",
   "version": "1.0.0",
   "description": "A Flux boilerplate app.",
   "main": "src/index.js",
   "scripts": {
     "start": "node server",
+    "dev" : "node lib/serve",
     "test": "jest",
     "test:accessibility": "pa11y http://localhost:3000",
     "postinstall": "./lib/production.sh"

@@ -12,8 +12,8 @@ module.exports = {
   output: {
     path: __dirname,
     publicPath: '/',
-    filename: 'dist/capacitor.js',
-    sourceMapFilename: 'dist/capacitor.map'
+    filename: 'public/capacitor.js',
+    sourceMapFilename: 'public/capacitor.map'
   },
 
   plugins: [

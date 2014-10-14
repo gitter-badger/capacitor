@@ -6,14 +6,16 @@
  * as seen below...
  */
 
-var { Routes, Route } = require('react-router');
+var { Routes, Route, NotFoundRoute } = require('react-router')
 
 module.exports = (
-  <Routes>
+  <Routes location="history" >
 
     <Route handler={ require('./components/layout') }>
       <Route name="home" path="/" handler={ require('./components/home') } />
     </Route>
 
+    <NotFoundRoute handler={ require('./components/404') } />
+
   </Routes>
-);
+)

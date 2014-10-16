@@ -1,5 +1,6 @@
 require('node-env-file')('./.env')
 
+var Path = require('path')
 var WebPack = require('webpack')
 var isDevelopment = process.env.NODE_ENV === 'development'
 
@@ -10,10 +11,10 @@ module.exports = {
   entry: './client/index.js',
 
   output: {
-    path: __dirname + '/../public',
+    path: Path.resolve(__dirname, '..', 'public'),
     publicPath: '/',
-    filename: 'public/capacitor.js',
-    sourceMapFilename: 'public/capacitor.map'
+    filename: 'capacitor.js',
+    sourceMapFilename: 'capacitor.map'
   },
 
   plugins: [

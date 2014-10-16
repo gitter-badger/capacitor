@@ -17,6 +17,8 @@ global.__DEV__  = process.env.NODE_ENV === 'development'
 global.__ROOT__ = path.resolve(__dirname, '..')
 
 require('./config')(app)
+
+require('./middleware/webpack')(app)
 require('./middleware/static')(app)
 require('./middleware/isomorphism')(app)
 

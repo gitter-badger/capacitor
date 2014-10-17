@@ -3,12 +3,9 @@ var Webpack = require("webpack")
 var url     = require('url')
 var config  = require('../config/webpack')
 
-var home    = url.format({ hostname: 'localhost', protocol: 'http', port: process.env.PORT })
-var address = url.format({ hostname: 'localhost', protocol: 'http', port: process.env.WEBPACK_PORT })
-
 config.entry = [
   'webpack/hot/dev-server',
-  "webpack-dev-server/client?" + address
+  "webpack-dev-server/client?" + process.env.ASSETS_HOST
 ].concat(config.entry)
 
 config.plugins = [
@@ -21,8 +18,8 @@ var server = new Server(compiler, {
   hot: true,
   stats: false,
   watchDelay: 300,
-  contentBase: home,
-  publicPath: url.resolve(address, '/assets')
+  contentBase: url.format({ hostname: 'localhost', protocol: 'http', port: process.env.PORT }),
+  publicPath: process.env.ASSETS_HOST
 })
 
 module.exports = server;

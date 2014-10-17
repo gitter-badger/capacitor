@@ -1,14 +1,18 @@
 /** @jsx React.DOM **/
 var React = require('react')
-var Monitor = require('../../mixins/monitor')
 var Counter = require('../../stores/counter')
 var CounterActions = require('../../actions/counter')
 
 var Home = React.createClass({
+  componentDidMount() {
+    Counter.onChange(this._onChange)
+  },
 
-  mixins: [ Monitor ],
+  componentWillUnmount() {
+    Counter.offChange(this._onChange)
+  },
 
-  getState() {
+  getInitialState() {
     return {
       count: Counter.get('count')
     }
@@ -29,6 +33,12 @@ var Home = React.createClass({
 
   _onCounterClick() {
     CounterActions.incr()
+  },
+
+  _onChange: function() {
+      this.setState({
+        count: Counter.get('count')
+      })
   }
 
 })

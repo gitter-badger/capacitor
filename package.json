@@ -1,62 +1,25 @@
 {
-  "name": "Capacitor",
+  "name": "isomorphic-flux-starter",
   "version": "1.0.0",
-  "description": "A Flux boilerplate app.",
-  "main": "src/index.js",
-  "scripts": {
-    "start": "node server",
-    "dev" : "node lib/serve",
-    "test": "jest",
-    "test:accessibility": "pa11y http://localhost:3000",
-    "postinstall": "./lib/production.sh"
-  },
-  "keywords": [
-    "flux",
-    "react"
-  ],
-  "author": "Nate Hunzaker",
+  "description": "An approachable isomorphic Flux setup",
+  "author": "Viget",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/vigetlabs/washi.git"
-  },
-  "jest": {
-    "globals": {
-      "__DEV__": true
-    },
-    "scriptPreprocessor": "<rootDir>/lib/jestPreprocessor.js",
-    "unmockedModulePathPatterns": [
-      "<rootDir>/node_modules/react",
-      "<rootDir>/node_modules/immutable"
-    ]
+    "url": "git://github.com/vigetlabs/isomorphic-flux-starter.git"
   },
   "dependencies": {
-    "colors": "^1.0.2",
-    "envify": "^1.2.1",
-    "envify-loader": "^0.1.0",
-    "express-handlebars": "^1.1.0",
     "flux": "^2.0.1",
-    "immutable": "^2.1.0",
-    "json-loader": "^0.5.1",
     "jsx-loader": "^0.11.2",
-    "node-env-file": "^0.1.4",
     "node-jsx": "^0.11.0",
     "react": "^0.11.2",
     "react-router": "^0.9.4",
     "swig": "^1.4.2",
-    "webpack": "^1.4.5",
-    "webpack-dev-middleware": "^1.0.11",
-    "webpack-dev-server": "^1.6.5",
-    "yaml-loader": "^0.1.0"
+    "webpack": "^1.4.5"
   },
   "devDependencies": {
-    "chai": "^1.9.2",
     "express": "^4.9.7",
-    "jest-cli": "^0.1.18",
-    "node-notifier": "^4.0.2",
-    "pa11y": "^1.6.2",
-    "react-hot-loader": "^0.4.5",
-    "react-router": "^0.9.3",
-    "react-tools": "^0.11.2"
+    "react-router": "^0.9.4",
+    "webpack-dev-middleware": "^1.0.11"
   }
 }

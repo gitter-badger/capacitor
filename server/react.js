@@ -1,4 +1,5 @@
-console.log('Installing node-jsx ...')
+require('colors')
+console.log('Installing %s ...', 'node-jsx'.green)
 
 require('node-jsx').install({
   extension : '.js',
@@ -6,7 +7,7 @@ require('node-jsx').install({
 })
 
 var Router = require('react-router')
-var routes = require('../../shared/router')
+var routes = require('../shared/router')
 
 module.exports = function (req, res, next) {
 

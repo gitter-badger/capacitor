@@ -7,8 +7,8 @@ var isDevelopment = process.env.NODE_ENV === 'development'
 module.exports = {
   cache: true,
   debug: isDevelopment,
-  devtool: isDevelopment ? 'sourcemap' : null,
-  entry: './client/index.js',
+  devtool: isDevelopment ? 'source-map' : null,
+  entry: './browser/index.js',
 
   output: {
     path: Path.resolve(__dirname, '..', 'public'),

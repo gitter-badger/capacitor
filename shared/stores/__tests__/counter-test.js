@@ -1,4 +1,5 @@
 jest.dontMock('../counter')
+jest.dontMock('events')
 
 describe('Store - Counter', function() {
   var Counter
@@ -12,11 +13,14 @@ describe('Store - Counter', function() {
     expect(Counter.get('foo')).toEqual('bar')
   })
 
-  it ('publishes to the Bus when a property is set', function() {
-    var Bus = require('../../bus')
+  it ('publishes an event when a property is set', function() {
+    var mock = jest.genMockFunction()
+
+    Counter.onChange(mock)
+
     Counter.set('foo', 'bar')
 
-    expect(Bus.publish).toBeCalled()
+    expect(mock).toBeCalled()
   })
 
   it ('can set properties by merging objects', function() {

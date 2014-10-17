@@ -3,14 +3,31 @@
  * and allows for the increasing of a counter value.
  */
 
-var Bus        = require('../bus')
+var Events     = require('events')
 var Dispatcher = require('../dispatcher')
 var Actions    = require('../constants/actions')
 var Immutable  = require('immutable')
 
+var merge      = require('react/lib/merge')
+var CHANGE     = 'change'
+
 var _data = Immutable.Map({ count : 0 })
 
-var Counter = {
+var Counter = merge(Events.EventEmitter.prototype, {
+
+  /**
+   * Adds an event listener to subscribe to data changes
+   */
+  onChange(callback) {
+    this.on(CHANGE, callback)
+  },
+
+  /**
+   * Removes an event listener on data changes
+   */
+  offChange(callback) {
+    this.removeListener(CHANGE, callback)
+  },
 
   /**
    * Returns properties. If given a string KEY, returns the specific value.
@@ -28,7 +45,7 @@ var Counter = {
    */
   set(prop, value) {
     _data = typeof prop === 'object' ? _data.merge(prop) : _data.set(prop, value)
-    Bus.publish()
+    Counter.emit(CHANGE)
   },
 
   /**
@@ -38,7 +55,7 @@ var Counter = {
     Counter.set('count', Counter.get('count') + 1)
   }
 
-}
+})
 
 module.exports = Counter
 

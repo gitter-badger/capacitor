@@ -21,9 +21,6 @@
     "url": "git://github.com/vigetlabs/washi.git"
   },
   "jest": {
-    "globals": {
-      "__DEV__": true
-    },
     "scriptPreprocessor": "<rootDir>/lib/jestPreprocessor.js",
     "unmockedModulePathPatterns": [
       "<rootDir>/node_modules/react",

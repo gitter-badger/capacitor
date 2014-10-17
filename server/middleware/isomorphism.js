@@ -8,8 +8,6 @@ require('node-jsx').install({
 var Router = require('react-router')
 var routes = require('../../shared/router')
 
-global.__DEV__  = process.env.NODE_ENV === 'development'
-
 module.exports = function (req, res, next) {
 
   Router.renderRoutesToString(routes, req.url, function(error, abortReason, html) {

@@ -17,11 +17,7 @@ module.exports = {
     sourceMapFilename: 'capacitor.map'
   },
 
-  plugins: [
-    new WebPack.DefinePlugin({
-      '__DEV__'  : isDevelopment
-    })
-  ],
+  plugins: [],
 
   resolve: {
     extensions: ['', '.js', '.jsx', '.json'],

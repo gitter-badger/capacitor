@@ -2,13 +2,13 @@ module.exports = {
   cache: true,
   debug: true,
   devtool: 'sourcemap',
-  entry: './app/index.js',
+  entry: './browser/application.js',
 
   output: {
-    path: __dirname + './public',
+    path: __dirname,
     publicPath: '/',
-    filename: 'public/app.js',
-    sourceMapFilename: 'public/app.map'
+    filename: 'application.js',
+    sourceMapFilename: 'application.map'
   },
 
   resolve: {

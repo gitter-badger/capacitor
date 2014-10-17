@@ -19,7 +19,9 @@
   </head>
   <body>
     <div id="app">
-      {{ app  }}
+      {% autoescape false %}
+        {{ app }}
+      {% endautoescape %}
     </div>
     <script src="/capacitor.js"></script>
   </body>

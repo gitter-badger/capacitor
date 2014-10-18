@@ -1,34 +1,41 @@
 require('colors')
 require('node-env-file')('.env')
 
-var project = require('../package')
-var path    = require('path')
-var url     = require('url')
-var express = require('express')
-var swig    = require('swig')
-var www     = path.resolve(process.cwd(), 'public')
-var app     = express()
+var Hapi = require('hapi')
+var Good = require('good')
+var path = require('path')
+var url  = require('url')
 
-// Views
-app.engine('html', swig.renderFile)
-   .set('views', www)
+var server = new Hapi.Server(process.env.PORT)
 
-app.locals.assets_host = process.env.ASSETS_HOST
+server.views({
+  engines: {
+    html: require('swig')
+  },
+  path: path.resolve(process.cwd(), 'public')
+})
 
-// Middleware
-app.use('./assets', express.static(www))
-   .use(require('./react'))
+// Static assets are forwared through to Webpack
+server.route(require('./proxies/assets'));
 
-app.listen(process.env.PORT, function() {
-  console.log("\n%s is listening on port %s (%s)", project.name.green, process.env.PORT.toString().blue, process.env.NODE_ENV.magenta)
+// Isomorphism
+server.route({
+  method: 'GET',
+  path: '/{p*}',
+  handler: require('./react')
+})
+
+server.pack.register(Good, function (err) {
+  if (err) {
+    throw err
+  }
+
+  server.start(function () {
+    server.log('info', 'Server running at: ' + server.info.uri)
+  })
 })
 
 // Run Webpack Dev Server in tandem
-if (app.get('env') === 'development') {
-  var webpack      = require('./webpack')
-  var webpack_port = url.parse(process.env.ASSETS_HOST).port
-
-  webpack.listen(webpack_port, function() {
-    console.log("%s is listening on port %s (%s)\n", 'Webpack'.green, webpack_port.toString().blue, process.env.NODE_ENV.magenta)
-  })
+if (process.env.NODE_ENV === 'development') {
+  require('./webpack')
 }

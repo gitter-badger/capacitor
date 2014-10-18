@@ -5,7 +5,7 @@
 
 var Events     = require('events')
 var Dispatcher = require('../dispatcher')
-var Actions    = require('../constants/actions')
+var Actions    = require('../constants/actions').Counter
 var Immutable  = require('immutable')
 
 var merge      = require('react/lib/merge')
@@ -61,7 +61,7 @@ module.exports = Counter
 
 Dispatcher.register(function(action) {
   switch (action.type) {
-    case Actions.COUNTER_INCR:
+    case Actions.INCR:
       Counter.incr()
       break
     default:

@@ -10,7 +10,7 @@ var Dispatcher = require('../dispatcher')
 module.exports = {
 
   incr() {
-    Dispatcher.dispatch({ type: Actions.COUNTER_INCR })
+    Dispatcher.dispatch({ type: Actions.COUNTER.INCR })
   }
 
 }

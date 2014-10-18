@@ -1,4 +1,3 @@
-require('colors')
 console.log('Installing %s ...', 'node-jsx'.green)
 
 require('node-jsx').install({
@@ -7,16 +6,21 @@ require('node-jsx').install({
 })
 
 var Router = require('react-router')
-var routes = require('../shared/router')
+var routes = require('../app/router')
+var url    = require('url')
 
-module.exports = function (req, res, next) {
+module.exports = function (request, reply) {
+  var path = url.format(request.url)
 
-  Router.renderRoutesToString(routes, req.url, function(error, abortReason, html) {
+  Router.renderRoutesToString(routes, path, function(error, abortReason, html) {
     if (error) {
-      res.error(error, abortReason)
+      reply.error(error, abortReason)
     }
 
-    res.render('application.html', { app: html })
+    reply.view('application.html', {
+      app: html,
+      assets_host: process.env.ASSETS_HOST
+    })
   })
 
 }

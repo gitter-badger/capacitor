@@ -5,6 +5,6 @@
  */
 
 var React  = require('react')
-var Router = require('../shared/router')
+var Router = require('../app/router')
 
 React.renderComponent(Router, document.querySelector('#app'))

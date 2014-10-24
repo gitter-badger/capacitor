@@ -5,7 +5,7 @@
 
 var Events     = require('events')
 var Dispatcher = require('../dispatcher')
-var Actions    = require('../constants/actions').Counter
+var Actions    = require('../constants/actions').COUNTER
 var Immutable  = require('immutable')
 
 var merge      = require('react/lib/merge')
